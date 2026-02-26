@@ -35,7 +35,7 @@ public class Settings {
             public static final String INTAKE = "Intake";
         }
         public static class Spindex {
-            public static final String spin = "spin";
+            public static final String Spin = "Spin";
         }
     }
 

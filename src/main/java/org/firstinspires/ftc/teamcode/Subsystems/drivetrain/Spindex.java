@@ -10,7 +10,7 @@ import org.firstinspires.ftc.teamcode.util.Settings.Positions;
 
 
 public class Spindex {
-    public CRServo spin;
+    public CRServo Spin;
     private boolean isRunning = false;
 
 
@@ -19,14 +19,14 @@ public class Spindex {
      * @param hardwareMap   An OpMode HardwareMap object
      */
     public Spindex (HardwareMap hardwareMap) {
-        spin = hardwareMap.get(CRServo.class, HardwareNames.Spindex.spin);
+        Spin = hardwareMap.get(CRServo.class, HardwareNames.Spindex.Spin);
     }
 
     /**
      * Run the intake
      */
     public void Spin() {
-        spin.setPower(1);
+        Spin.setPower(1);
         isRunning = true;
     }
 
@@ -34,12 +34,12 @@ public class Spindex {
      * Eject an artifact in the robot
      */
     public void CCSpin() {
-        spin.setPower(-1);
+        Spin.setPower(-1);
         isRunning = true;
     }
 
     public void SpinStop() {
-        spin.setPower(0);
+        Spin.setPower(0);
         isRunning = false;
     }
     public void Spintoggle() {
@@ -48,7 +48,7 @@ public class Spindex {
         else            this.SpinStop();
     }
     public void custom(double speed) {
-        spin.setPower(speed);
+        Spin.setPower(speed);
         isRunning = true;
     }
 }

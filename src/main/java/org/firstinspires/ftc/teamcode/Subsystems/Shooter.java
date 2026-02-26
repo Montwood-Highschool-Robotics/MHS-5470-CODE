@@ -10,9 +10,10 @@ public class Shooter {
     private DcMotor Shooter2;
 
     public Shooter(HardwareMap hwMap) {
-        Shooter1 = hwMap.get(DcMotorEx.class, "shooter1");
+        Shooter1 = hwMap.get(DcMotorEx.class, "Shooter1");
 
-        Shooter2 = hwMap.get(DcMotorEx.class, "shooter2");
+        Shooter2 = hwMap.get(DcMotorEx.class, "Shooter2");
+
         Shooter1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         Shooter1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         Shooter1.setDirection(DcMotorEx.Direction.FORWARD);

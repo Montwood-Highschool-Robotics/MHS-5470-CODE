@@ -66,7 +66,7 @@ public class Constants {
             .useSecondaryTranslationalPIDF(true);
 
     public static MecanumConstants driveConstants = new MecanumConstants()
-            .maxPower(1.0)
+            .maxPower(.5)
             .xVelocity(78.52327217642717)
             //76.66954028512549
             .yVelocity(58.77843805748647)

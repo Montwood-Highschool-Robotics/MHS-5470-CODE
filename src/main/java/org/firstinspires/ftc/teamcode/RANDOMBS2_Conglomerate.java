@@ -44,19 +44,8 @@ RANDOMBS2_Conglomerate extends LinearOpMode {
     private DcMotor Shooter1;
     private DcMotor Shooter2;
     private DcMotor Intake;
-
-    private CRServo LTopLift;
-    private CRServo LBotLift;
-
     private CRServo AngleFish;
-    private CRServo RBotLift;
-
-    private CRServo RTopLift;
-
-    private Servo OuttakeServo;
-
     private CRServo Spin;
-
     private Limelight3A limelight;
     private ElapsedTime runtime = null;
     NormalizedColorSensor colorSensor;
@@ -108,12 +97,8 @@ RANDOMBS2_Conglomerate extends LinearOpMode {
         DcMotor Shooter2 = hardwareMap.dcMotor.get("Shooter2");
         DcMotor Intake = hardwareMap.dcMotor.get("Intake");
 
-        CRServo LTopLift = hardwareMap.crservo.get("LTopLift");
-        CRServo LBotLift = hardwareMap.crservo.get("LBotLift");
+
         CRServo AngleFish = hardwareMap.crservo.get("AngleFish");
-        CRServo RBotLift = hardwareMap.crservo.get("RBotLift");
-        CRServo RTopLift = hardwareMap.crservo.get("RTopLift");
-        Servo OuttakeServo = hardwareMap.servo.get("OuttakeServo");
         CRServo Spin = hardwareMap.crservo.get("Spin");
 
         telemetry.setMsTransmissionInterval(53);
@@ -181,18 +166,13 @@ RANDOMBS2_Conglomerate extends LinearOpMode {
                 Shooter1.setPower(-0.9);
                 Shooter2.setPower(0.9);
             } else if (gamepad2.left_bumper) {
-                Shooter1.setPower(-0.6);
-                Shooter2.setPower(0.6);
+                Shooter1.setPower(-0.7);
+                Shooter2.setPower(0.7);
             } else {
                 Shooter1.setPower(0);
                 Shooter2.setPower(0);
             }
 
-            if (gamepad2.cross) {
-                OuttakeServo.setPosition(0);//These are the angles that philip said were good if this explodes its all on him
-            } else {
-                OuttakeServo.setPosition(1);
-            }
 
 
             if (gamepad2.right_trigger > 0.1) {
@@ -209,22 +189,7 @@ RANDOMBS2_Conglomerate extends LinearOpMode {
             }
 
 
-            if (gamepad1.dpad_up) {
-                LTopLift.setPower(-1);
-                LBotLift.setPower(1);
-                RBotLift.setPower(-1);
-                RTopLift.setPower(1);
-            } else if (gamepad1.dpad_down) {
-                LTopLift.setPower(1);
-                LBotLift.setPower(-1);
-                RBotLift.setPower(1);
-                RTopLift.setPower(-1);
-            } else {
-                LTopLift.setPower(0);
-                LBotLift.setPower(0);
-                RBotLift.setPower(0);
-                RTopLift.setPower(0);
-            }
+
 
             if (gamepad2.dpad_up) {
                 AngleFish.setPower(0.5);
